@@ -2,8 +2,6 @@ package po.stockPO;
 
 import java.io.Serializable;
 
-import po.agencyPO.WarehousePO;
-
 //库存入库（订单号、入库日期、审批状态、目的地、区、排、架、位）
 //库存出库（订单号、出库日期、审批状态、目的地、装运形式、中转单编号或汽运编号）
 @SuppressWarnings("serial")
@@ -14,7 +12,6 @@ public class StockPO implements Serializable{
 	 private String arrival;	//目的地
 	 
 	 private String dateIn;		//入库日期
-	 private WarehousePO warehouse;			//所在仓库
 	 private String area;	//区（航运、铁运、汽运、机动）
 	 private String row;			//排
 	 private String shelf;			//架
@@ -26,6 +23,24 @@ public class StockPO implements Serializable{
 	 
 	 private int num;	//库存数量
 	 private double money;//当前订单合计金额
+	 
+	 private static int MAX_NUMBER;			//最大容量 常量（需要set与get吗）
+	 private double rate;		//警戒比例（0-1）
+	 
+		//最大容量
+		public void setMAX_NUMBER(int num){
+			StockPO.MAX_NUMBER = num;
+		}
+		public int getMAX_NUMBER(){
+			return MAX_NUMBER;
+		}
+		//警戒比例
+		public void setRate(double r){
+			this.rate = r;
+		}
+		public double getRate(){
+			return rate;
+		}
 	 
 	 public StockPO (String id,String arrival,
 			 String datein,String area,String row,String shelf,String seat,
@@ -52,12 +67,6 @@ public class StockPO implements Serializable{
 		super();
 	}
 	
-	public void setWarehouse(WarehousePO w){
-		this.warehouse=w;
-	}
-	public WarehousePO getWarehouse(){
-		return warehouse;
-	}
 	//快递单号
 	public void setOrderID(String id){
 		this.orderID = id;

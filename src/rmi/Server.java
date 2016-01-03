@@ -10,7 +10,6 @@ import data.accountdata.AccountData;
 import data.agencydata.agencydata.AgencyData;
 import data.agencydata.centerdata.CenterData;
 import data.agencydata.halldata.HallData;
-import data.agencydata.warehousedata.WarehouseData;
 import data.billdata.BillData;
 import data.costdata.CostData;
 import data.expressdata.arrivaldata.centerarrivaldata.CenterArrivalData;
@@ -33,7 +32,6 @@ import dataservice.accountdataservice.AccountDataService;
 import dataservice.agencydataservice.AgencyDataService;
 import dataservice.agencydataservice.CenterDataService;
 import dataservice.agencydataservice.HallDataService;
-import dataservice.agencydataservice.WarehouseDataService;
 import dataservice.billdataservice.BillDataService;
 import dataservice.costdataservice.CostDataService;
 import dataservice.expressdataservice.arrivaldataservice.CenterArrivalDataService;
@@ -71,10 +69,7 @@ public class Server {
 			
 			HallDataService hall = new HallData();
 			Naming.bind("rmi://127.0.0.1:32000/Rhall", hall);
-			
-			WarehouseDataService warehouse = new WarehouseData();
-			Naming.bind("rmi://127.0.0.1:32000/Rwarehouse", warehouse);
-			
+					
 			BillDataService bill = new BillData();
 			Naming.bind("rmi://127.0.0.1:32000/Rbill", bill);
 			
