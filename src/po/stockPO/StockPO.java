@@ -25,20 +25,20 @@ public class StockPO implements Serializable{
 	 private double money;//当前订单合计金额
 	 
 	 private static int MAX_NUMBER;			//最大容量 常量（需要set与get吗）
-	 private double rate;		//警戒比例（0-1）
+	 private static double rate;		//警戒比例（0-1）
 	 
 		//最大容量
-		public void setMAX_NUMBER(int num){
+		public static void setMAX_NUMBER(int num){
 			StockPO.MAX_NUMBER = num;
 		}
-		public int getMAX_NUMBER(){
+		public static int getMAX_NUMBER(){
 			return MAX_NUMBER;
 		}
 		//警戒比例
-		public void setRate(double r){
-			this.rate = r;
+		public static void setRate(double r){
+			StockPO.rate = r;
 		}
-		public double getRate(){
+		public static double getRate(){
 			return rate;
 		}
 	 
