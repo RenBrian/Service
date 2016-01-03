@@ -1,11 +1,19 @@
 package data.transitdata.centerloaddata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.transitdataservice.CenterLoadDataService;
 import po.transitPO.CenterLoadPO;
 
-public class CenterLoadData implements CenterLoadDataService {
+@SuppressWarnings("serial")
+public class CenterLoadData extends UnicastRemoteObject implements CenterLoadDataService {
+	public CenterLoadData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static CenterLoadList cl = new CenterLoadList();
 
 	@Override

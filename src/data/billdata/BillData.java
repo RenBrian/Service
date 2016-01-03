@@ -1,11 +1,19 @@
 package data.billdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.billdataservice.BillDataService;
 import po.billPO.BillPO;
 
-public class BillData implements BillDataService {
+@SuppressWarnings("serial")
+public class BillData extends UnicastRemoteObject implements BillDataService {
+	public BillData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static BillList bl = new BillList();
 
 	@Override

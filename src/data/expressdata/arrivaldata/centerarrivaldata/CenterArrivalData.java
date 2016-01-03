@@ -1,11 +1,19 @@
 package data.expressdata.arrivaldata.centerarrivaldata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.expressdataservice.arrivaldataservice.CenterArrivalDataService;
 import po.expressPO.arrivalPO.CenterArrivalPO;
 
-public class CenterArrivalData implements CenterArrivalDataService {
+@SuppressWarnings("serial")
+public class CenterArrivalData extends UnicastRemoteObject implements CenterArrivalDataService {
+	public CenterArrivalData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static CenterArrivalList cl = new CenterArrivalList();
 
 	@Override

@@ -1,11 +1,19 @@
 package data.agencydata.centerdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.agencydataservice.CenterDataService;
 import po.agencyPO.CenterPO;
 
-public class CenterData implements CenterDataService {
+@SuppressWarnings("serial")
+public class CenterData extends UnicastRemoteObject implements CenterDataService {
+	public CenterData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static CenterList cl = new CenterList();
 
 	@Override

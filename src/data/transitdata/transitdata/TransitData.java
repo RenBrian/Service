@@ -1,11 +1,19 @@
 package data.transitdata.transitdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.transitdataservice.TransitDataService;
 import po.transitPO.TransitPO;
 
-public class TransitData implements TransitDataService {
+@SuppressWarnings("serial")
+public class TransitData extends UnicastRemoteObject implements TransitDataService {
+	public TransitData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static TransitList tl = new TransitList();
 
 	@Override

@@ -1,11 +1,19 @@
 package data.logdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.logdataservice.LogDataService;
 import po.logPO.LogPO;
 
-public class LogData implements LogDataService {
+@SuppressWarnings("serial")
+public class LogData extends UnicastRemoteObject implements LogDataService {
+	public LogData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static LogList ll = new LogList();
 
 	@Override

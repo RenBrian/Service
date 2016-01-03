@@ -1,11 +1,19 @@
 package data.infodata.driverdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import po.infoPO.DriverPO;
 import dataservice.infodataservice.DriverDataService;
 
-public class DriverData implements DriverDataService {
+@SuppressWarnings("serial")
+public class DriverData extends UnicastRemoteObject implements DriverDataService {
+	public DriverData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	private static DriverList dl = new DriverList();
 
 	@Override

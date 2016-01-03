@@ -1,18 +1,20 @@
 package dataservice.logdataservice;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import po.logPO.LogPO;
 
-public interface LogDataService {
-	public LogPO findLog(LogPO lp);
+public interface LogDataService extends Remote{
+	public LogPO findLog(LogPO lp) throws RemoteException;
 
-	public void addLog(LogPO lp);
+	public void addLog(LogPO lp) throws RemoteException;
 
-	public void changeLog(LogPO lp1, LogPO lp2);
+	public void changeLog(LogPO lp1, LogPO lp2) throws RemoteException;
 
-	public void removeLog(LogPO lp);
+	public void removeLog(LogPO lp) throws RemoteException;
 
-	public ArrayList<LogPO> getLogList();
+	public ArrayList<LogPO> getLogList() throws RemoteException;
 
 }

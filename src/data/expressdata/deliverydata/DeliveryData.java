@@ -1,11 +1,19 @@
 package data.expressdata.deliverydata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.expressdataservice.deliverydataservice.DeliveryDataService;
 import po.expressPO.deliveryPO.DeliveryPO;
 
-public class DeliveryData implements DeliveryDataService {
+@SuppressWarnings("serial")
+public class DeliveryData extends UnicastRemoteObject implements DeliveryDataService {
+	public DeliveryData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static DeliveryList dl = new DeliveryList();
 
 	@Override

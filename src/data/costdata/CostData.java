@@ -1,11 +1,19 @@
 package data.costdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.costdataservice.CostDataService;
 import po.costPO.CostPO;
 
-public class CostData implements CostDataService {
+@SuppressWarnings("serial")
+public class CostData extends UnicastRemoteObject implements CostDataService {
+	public CostData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static CostList cl = new CostList();
 
 	@Override

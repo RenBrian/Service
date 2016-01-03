@@ -1,11 +1,19 @@
 package data.stratedarddata.strategydata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.stratedarddataservice.StrategyDataService;
 import po.stratedardPO.StrategyPO;
 
-public class StrategyData implements StrategyDataService {
+@SuppressWarnings("serial")
+public class StrategyData extends UnicastRemoteObject implements StrategyDataService {
+	public StrategyData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static StrategyList sl = new StrategyList();
 
 	@Override

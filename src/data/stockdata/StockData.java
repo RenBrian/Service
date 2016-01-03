@@ -1,11 +1,19 @@
 package data.stockdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.stockdataservice.StockDataService;
 import po.stockPO.StockPO;
 
-public class StockData implements StockDataService {
+@SuppressWarnings("serial")
+public class StockData extends UnicastRemoteObject implements StockDataService {
+	public StockData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static StockList sl = new StockList();
 
 	@Override

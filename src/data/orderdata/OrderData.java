@@ -1,11 +1,19 @@
 package data.orderdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import po.orderPO.OrderPO;
 import dataservice.orderdataservice.OrderDataService;
 
-public class OrderData implements OrderDataService {
+@SuppressWarnings("serial")
+public class OrderData extends UnicastRemoteObject implements OrderDataService {
+	public OrderData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	private static OrderList ol = new OrderList();;
 
 	@Override

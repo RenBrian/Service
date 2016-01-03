@@ -1,11 +1,19 @@
 package data.expressdata.arrivaldata.hallarrivaldata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.expressdataservice.arrivaldataservice.HallArrivalDataService;
 import po.expressPO.arrivalPO.HallArrivalPO;
 
-public class HallArrivalData implements HallArrivalDataService {
+@SuppressWarnings("serial")
+public class HallArrivalData extends UnicastRemoteObject implements HallArrivalDataService {
+	public HallArrivalData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static HallArrivalList hl = new HallArrivalList();
 
 	@Override

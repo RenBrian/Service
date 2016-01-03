@@ -1,11 +1,19 @@
 package data.infodata.vehicledata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import po.infoPO.VehiclePO;
 import dataservice.infodataservice.VehicleDataService;
 
-public class VehicleData implements VehicleDataService {
+@SuppressWarnings("serial")
+public class VehicleData extends UnicastRemoteObject implements VehicleDataService {
+	public VehicleData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	private static VehicleList vl = new VehicleList();
 
 	@Override

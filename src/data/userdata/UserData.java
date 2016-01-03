@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import po.userPO.UserPO;
 import dataservice.userdataservice.UserDataService;
 
+@SuppressWarnings("serial")
 public class UserData extends UnicastRemoteObject implements UserDataService {
 
 	public UserData() throws RemoteException {

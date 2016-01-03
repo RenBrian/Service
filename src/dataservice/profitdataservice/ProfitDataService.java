@@ -1,18 +1,20 @@
 package dataservice.profitdataservice;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import po.profitPO.ProfitPO;
 
-public interface ProfitDataService {
-	public ProfitPO findProfit(ProfitPO pp);
+public interface ProfitDataService extends Remote{
+	public ProfitPO findProfit(ProfitPO pp) throws RemoteException;
 
-	public void addProfit(ProfitPO pp);
+	public void addProfit(ProfitPO pp) throws RemoteException;
 
-	public void changeProfit(ProfitPO pp1, ProfitPO pp2);
+	public void changeProfit(ProfitPO pp1, ProfitPO pp2) throws RemoteException;
 
-	public void removeProfit(ProfitPO pp);
+	public void removeProfit(ProfitPO pp) throws RemoteException;
 
-	public ArrayList<ProfitPO> getProfitList();
+	public ArrayList<ProfitPO> getProfitList() throws RemoteException;
 
 }

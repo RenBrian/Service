@@ -1,11 +1,19 @@
 package data.stratedarddata.standarddata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.stratedarddataservice.StandardDataService;
 import po.stratedardPO.StandardPO;
 
-public class StandardData implements StandardDataService {
+@SuppressWarnings("serial")
+public class StandardData extends UnicastRemoteObject implements StandardDataService {
+	public StandardData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static StandardList sl = new StandardList();
 
 	@Override

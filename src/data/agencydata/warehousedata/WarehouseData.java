@@ -1,11 +1,19 @@
 package data.agencydata.warehousedata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.agencydataservice.WarehouseDataService;
 import po.agencyPO.WarehousePO;
 
-public class WarehouseData implements WarehouseDataService {
+@SuppressWarnings("serial")
+public class WarehouseData extends UnicastRemoteObject implements WarehouseDataService {
+	public WarehouseData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static WarehouseList wl = new WarehouseList();
 
 	@Override

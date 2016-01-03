@@ -1,11 +1,19 @@
 package data.transitdata.hallloaddata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.transitdataservice.HallLoadDataService;
 import po.transitPO.HallLoadPO;
 
-public class HallLoadData implements HallLoadDataService {
+@SuppressWarnings("serial")
+public class HallLoadData extends UnicastRemoteObject implements HallLoadDataService {
+	public HallLoadData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static HallLoadList hl = new HallLoadList();
 
 	@Override

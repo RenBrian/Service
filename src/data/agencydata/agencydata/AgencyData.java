@@ -1,11 +1,20 @@
 package data.agencydata.agencydata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.agencydataservice.AgencyDataService;
 import po.agencyPO.AgencyPO;
 
-public class AgencyData implements AgencyDataService {
+@SuppressWarnings("serial")
+public class AgencyData extends UnicastRemoteObject implements AgencyDataService {
+	
+	public AgencyData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static AgencyList al = new AgencyList();
 
 	@Override

@@ -1,11 +1,19 @@
 package data.profitdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.profitdataservice.ProfitDataService;
 import po.profitPO.ProfitPO;
 
-public class ProfitData implements ProfitDataService {
+@SuppressWarnings("serial")
+public class ProfitData extends UnicastRemoteObject implements ProfitDataService {
+	public ProfitData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static ProfitList pl = new ProfitList();
 
 	@Override

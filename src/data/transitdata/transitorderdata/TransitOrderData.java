@@ -1,11 +1,19 @@
 package data.transitdata.transitorderdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.transitdataservice.TransitOrderDataService;
 import po.transitPO.TransitOrderPO;
 
-public class TransitOrderData implements TransitOrderDataService {
+@SuppressWarnings("serial")
+public class TransitOrderData extends UnicastRemoteObject implements TransitOrderDataService {
+	public TransitOrderData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static TransitOrderList tl = new TransitOrderList();
 
 	@Override

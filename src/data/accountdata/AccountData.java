@@ -1,11 +1,20 @@
 package data.accountdata;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import dataservice.accountdataservice.AccountDataService;
 import po.accountPO.AccountPO;
 
-public class AccountData implements AccountDataService {
+@SuppressWarnings("serial")
+public class AccountData extends UnicastRemoteObject implements AccountDataService {
+	
+	public AccountData() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public static AccountList al = new AccountList();
 
 	@Override
