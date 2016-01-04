@@ -27,8 +27,20 @@ public class HallList implements Serializable {
 			}
 			return null;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Hall.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<HallPO> hpl = new ArrayList<HallPO>();
+				hpl.add(hp);
+				os.writeObject(hpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,8 +65,20 @@ public class HallList implements Serializable {
 			os.close();
 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Hall.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<HallPO> hpl = new ArrayList<HallPO>();
+				hpl.add(hp);
+				os.writeObject(hpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,8 +107,20 @@ public class HallList implements Serializable {
 			os.writeObject(upl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Hall.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<HallPO> hpl = new ArrayList<HallPO>();
+				hpl.add(hp);
+				os.writeObject(hpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -110,8 +146,20 @@ public class HallList implements Serializable {
 			ArrayList<HallPO> upl = (ArrayList<HallPO>) ois.readObject();
 			return upl;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Hall.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<HallPO> hpl = new ArrayList<HallPO>();
+				os.writeObject(hpl);
+				os.close();
+				return hpl;
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

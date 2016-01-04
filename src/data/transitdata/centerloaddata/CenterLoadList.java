@@ -27,8 +27,20 @@ public class CenterLoadList implements Serializable {
 			}
 			return null;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("CenterLoad.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<CenterLoadPO> cpl = new ArrayList<CenterLoadPO>();
+				cpl.add(cp);
+				os.writeObject(cpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,8 +65,20 @@ public class CenterLoadList implements Serializable {
 			os.close();
 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("CenterLoad.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<CenterLoadPO> cpl = new ArrayList<CenterLoadPO>();
+				cpl.add(cp);
+				os.writeObject(cpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,8 +107,20 @@ public class CenterLoadList implements Serializable {
 			os.writeObject(upl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("CenterLoad.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<CenterLoadPO> cpl = new ArrayList<CenterLoadPO>();
+				cpl.add(cp);
+				os.writeObject(cpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -110,8 +146,20 @@ public class CenterLoadList implements Serializable {
 			ArrayList<CenterLoadPO> upl = (ArrayList<CenterLoadPO>) ois.readObject();
 			return upl;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("CenterLoad.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<CenterLoadPO> cpl = new ArrayList<CenterLoadPO>();
+				os.writeObject(cpl);
+				os.close();
+				return cpl;
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -27,8 +27,20 @@ public class BillList implements Serializable {
 			}
 			return null;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Bill.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<BillPO> bpl = new ArrayList<BillPO>();
+				bpl.add(bp);
+				os.writeObject(bpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,8 +65,20 @@ public class BillList implements Serializable {
 			os.close();
 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Bill.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<BillPO> bpl = new ArrayList<BillPO>();
+				bpl.add(bp);
+				os.writeObject(bpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,8 +107,20 @@ public class BillList implements Serializable {
 			os.writeObject(upl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Bill.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<BillPO> bpl = new ArrayList<BillPO>();
+				bpl.add(bp);
+				os.writeObject(bpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -110,8 +146,20 @@ public class BillList implements Serializable {
 			ArrayList<BillPO> upl = (ArrayList<BillPO>) ois.readObject();
 			return upl;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Bill.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<BillPO> bpl = new ArrayList<BillPO>();
+				os.writeObject(bpl);
+				os.close();
+				return bpl;
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

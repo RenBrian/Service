@@ -32,8 +32,20 @@ public class UserList implements Serializable {
 			}
 			return null;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("User.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<UserPO> upl = new ArrayList<UserPO>();
+				upl.add(up);
+				os.writeObject(upl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,7 +71,7 @@ public class UserList implements Serializable {
 
 		} catch (FileNotFoundException e) {
 			try {
-				ArrayList<UserPO> upl =new ArrayList<UserPO>();
+				ArrayList<UserPO> upl = new ArrayList<UserPO>();
 				FileOutputStream fs = new FileOutputStream("User.file");
 				ObjectOutputStream os = new ObjectOutputStream(fs);
 				upl.add(up);
@@ -100,8 +112,20 @@ public class UserList implements Serializable {
 			os.writeObject(upl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("User.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<UserPO> upl = new ArrayList<UserPO>();
+				upl.add(up);
+				os.writeObject(upl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -127,8 +151,20 @@ public class UserList implements Serializable {
 			ArrayList<UserPO> upl = (ArrayList<UserPO>) ois.readObject();
 			return upl;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("User.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<UserPO> upl = new ArrayList<UserPO>();
+				os.writeObject(upl);
+				os.close();
+				return upl;
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

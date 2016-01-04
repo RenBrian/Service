@@ -27,8 +27,20 @@ public class TransitList implements Serializable {
 			}
 			return null;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Transit.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<TransitPO> tpl = new ArrayList<TransitPO>();
+				tpl.add(tp);
+				os.writeObject(tpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,8 +65,20 @@ public class TransitList implements Serializable {
 			os.close();
 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Transit.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<TransitPO> tpl = new ArrayList<TransitPO>();
+				tpl.add(tp);
+				os.writeObject(tpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,8 +107,20 @@ public class TransitList implements Serializable {
 			os.writeObject(upl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Transit.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<TransitPO> tpl = new ArrayList<TransitPO>();
+				tpl.add(tp);
+				os.writeObject(tpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -110,8 +146,20 @@ public class TransitList implements Serializable {
 			ArrayList<TransitPO> upl = (ArrayList<TransitPO>) ois.readObject();
 			return upl;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Transit.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<TransitPO> tpl = new ArrayList<TransitPO>();
+				os.writeObject(tpl);
+				os.close();
+				return tpl;
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

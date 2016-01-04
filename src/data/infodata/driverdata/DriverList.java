@@ -13,7 +13,7 @@ import po.infoPO.DriverPO;
 
 @SuppressWarnings("serial")
 public class DriverList implements Serializable {
-	public  void addDriver(DriverPO dp) {
+	public void addDriver(DriverPO dp) {
 		try {
 			FileInputStream fis = new FileInputStream("Driver.file");
 			@SuppressWarnings("resource")
@@ -27,10 +27,10 @@ public class DriverList implements Serializable {
 			os.close();
 		} catch (FileNotFoundException e) {
 			try {
-				ArrayList<DriverPO> dpl = new ArrayList<DriverPO>();
-				dpl.add(dp);
 				FileOutputStream fs = new FileOutputStream("Driver.file");
 				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<DriverPO> dpl = new ArrayList<DriverPO>();
+				dpl.add(dp);
 				os.writeObject(dpl);
 				os.close();
 			} catch (FileNotFoundException e1) {
@@ -67,8 +67,20 @@ public class DriverList implements Serializable {
 			os.writeObject(dpl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Driver.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<DriverPO> dpl = new ArrayList<DriverPO>();
+				dpl.add(dp);
+				os.writeObject(dpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -96,8 +108,20 @@ public class DriverList implements Serializable {
 			}
 			return null;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Driver.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<DriverPO> dpl = new ArrayList<DriverPO>();
+				dpl.add(po);
+				os.writeObject(dpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -117,8 +141,20 @@ public class DriverList implements Serializable {
 			ArrayList<DriverPO> dpl = (ArrayList<DriverPO>) ois.readObject();
 			return dpl;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Driver.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<DriverPO> dpl = new ArrayList<DriverPO>();
+				os.writeObject(dpl);
+				os.close();
+				return dpl;
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -131,14 +167,14 @@ public class DriverList implements Serializable {
 
 	public static void main(String[] args) {
 		DriverList dl = new DriverList();
-//		 DriverPO po=new DriverPO();
-//		 po.setIDCode("999");
-//		 po.setName("老司机");
-//		 dl.addDriver(po);
-//		 dl.removeDriver(po);
+		// DriverPO po=new DriverPO();
+		// po.setIDCode("999");
+		// po.setName("老司机");
+		// dl.addDriver(po);
+		// dl.removeDriver(po);
 		ArrayList<DriverPO> a = dl.getDriverList();
 		for (int i = 0; i < a.size(); i++) {
-			System.out.println(a.get(i).getIDCode()+a.get(i).getName());
+			System.out.println(a.get(i).getIDCode() + a.get(i).getName());
 		}
 	}
 }

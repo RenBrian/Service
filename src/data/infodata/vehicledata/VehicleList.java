@@ -26,7 +26,20 @@ public class VehicleList implements Serializable {
 			}
 			return null;
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Vehicle.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<VehiclePO> vpl = new ArrayList<VehiclePO>();
+				vpl.add(vp);
+				os.writeObject(vpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -48,8 +61,20 @@ public class VehicleList implements Serializable {
 			os.writeObject(vpl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Vehicle.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<VehiclePO> vpl = new ArrayList<VehiclePO>();
+				vpl.add(vp);
+				os.writeObject(vpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -77,8 +102,20 @@ public class VehicleList implements Serializable {
 			os.writeObject(vpl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Vehicle.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<VehiclePO> vpl = new ArrayList<VehiclePO>();
+				vpl.add(vp);
+				os.writeObject(vpl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -103,7 +140,20 @@ public class VehicleList implements Serializable {
 			ArrayList<VehiclePO> vpl = (ArrayList<VehiclePO>) ois.readObject();
 			return vpl;
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Vehicle.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<VehiclePO> vpl = new ArrayList<VehiclePO>();
+				os.writeObject(vpl);
+				os.close();
+				return vpl;
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

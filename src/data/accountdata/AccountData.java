@@ -9,7 +9,7 @@ import po.accountPO.AccountPO;
 
 @SuppressWarnings("serial")
 public class AccountData extends UnicastRemoteObject implements AccountDataService {
-	
+
 	public AccountData() throws RemoteException {
 		super();
 		// TODO Auto-generated constructor stub

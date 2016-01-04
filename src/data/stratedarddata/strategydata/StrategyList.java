@@ -27,8 +27,20 @@ public class StrategyList implements Serializable {
 			}
 			return null;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Strategy.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<StrategyPO> spl = new ArrayList<StrategyPO>();
+				spl.add(sp);
+				os.writeObject(spl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,8 +65,20 @@ public class StrategyList implements Serializable {
 			os.close();
 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Strategy.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<StrategyPO> spl = new ArrayList<StrategyPO>();
+				spl.add(sp);
+				os.writeObject(spl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -84,8 +108,20 @@ public class StrategyList implements Serializable {
 			os.writeObject(upl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Strategy.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<StrategyPO> spl = new ArrayList<StrategyPO>();
+				spl.add(sp);
+				os.writeObject(spl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -111,8 +147,20 @@ public class StrategyList implements Serializable {
 			ArrayList<StrategyPO> upl = (ArrayList<StrategyPO>) ois.readObject();
 			return upl;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Strategy.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<StrategyPO> spl = new ArrayList<StrategyPO>();
+				os.writeObject(spl);
+				os.close();
+				return spl;
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

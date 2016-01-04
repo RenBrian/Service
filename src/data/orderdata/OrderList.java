@@ -28,8 +28,20 @@ public class OrderList implements Serializable {
 			}
 			return null;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Order.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<OrderPO> opl = new ArrayList<OrderPO>();
+				opl.add(op);
+				os.writeObject(opl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,8 +65,20 @@ public class OrderList implements Serializable {
 			os.writeObject(upl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Order.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<OrderPO> opl = new ArrayList<OrderPO>();
+				opl.add(op);
+				os.writeObject(opl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,8 +107,20 @@ public class OrderList implements Serializable {
 			os.writeObject(opl);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Order.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<OrderPO> opl = new ArrayList<OrderPO>();
+				opl.add(op);
+				os.writeObject(opl);
+				os.close();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -110,8 +146,20 @@ public class OrderList implements Serializable {
 			ArrayList<OrderPO> opl = (ArrayList<OrderPO>) ois.readObject();
 			return opl;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				FileOutputStream fs = new FileOutputStream("Order.file");
+				ObjectOutputStream os = new ObjectOutputStream(fs);
+				ArrayList<OrderPO> opl = new ArrayList<OrderPO>();
+				os.writeObject(opl);
+				os.close();
+				return opl;
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
