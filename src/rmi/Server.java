@@ -83,7 +83,7 @@ public class Server {
 			Naming.bind("rmi://127.0.0.1:32000/Rhallarrival", hallarrival);
 			
 			DeliveryDataService delivery = new DeliveryData();
-			Naming.bind("rmi://127.0.0.1:32000/Rdeliver", delivery);
+			Naming.bind("rmi://127.0.0.1:32000/Rdelivery", delivery);
 			
 			DriverDataService driver = new DriverData();
 			Naming.bind("rmi://127.0.0.1:32000/Rdriver", driver);
