@@ -52,7 +52,7 @@ import dataservice.transitdataservice.TransitOrderDataService;
 import dataservice.userdataservice.UserDataService;
 
 public class Server {
-	public static void main(String[] args){
+	public static String Start(){
 		try {
 			LocateRegistry.createRegistry(32000);
 			UserDataService user=new UserData();
@@ -121,7 +121,7 @@ public class Server {
 			TransitOrderDataService transitorder = new TransitOrderData();
 			Naming.bind("rmi://127.0.0.1:32000/Rtransitorder",transitorder);
 		
-			System.out.println("服务器启动成功！");
+			return"服务器启动成功！";
 
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
@@ -133,6 +133,7 @@ public class Server {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return "服务器启动失败";
 	}
 
 }
