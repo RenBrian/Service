@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("serial")
 public class TransitOrderPO implements Serializable{
+	public boolean Shenpi=false;
 	protected String id;
 	protected String date;
 	protected ArrayList<String> orderList=new ArrayList<String>();

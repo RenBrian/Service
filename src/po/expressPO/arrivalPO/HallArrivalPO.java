@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class HallArrivalPO implements Serializable {
+	public boolean Shenpi=false;
 	protected String id;//汽运编号
 	protected String date;//到达日期
 	protected String start;//出发地

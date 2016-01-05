@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class DeliveryPO implements Serializable{
+	public boolean Shenpi=false;
 
 	private String id;
 	private String date;

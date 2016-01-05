@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("serial")
 public class BillPO implements Serializable{
-
+	public boolean Shenpi=false;
 	private ArrayList<String> orderID=new ArrayList<String>();
 	private String courier;
 	private double fee=0;

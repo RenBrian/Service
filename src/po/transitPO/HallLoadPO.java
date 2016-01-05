@@ -6,6 +6,14 @@ public class HallLoadPO extends TransitOrderPO{
 	private String idOfHall;//营业厅编号
 	private String arrival;//到达地
 //	private String  escort;//押运员
+	private String idOfVehicle;//车辆代号
+	
+	public void setIDOfVehicle(String id){
+		this.idOfVehicle=id;
+	}
+	public String getIDOfVehicle(){
+		return idOfVehicle;
+	}
 	
 	public HallLoadPO(){
 		super();

@@ -3,6 +3,7 @@ package po.costPO;
 import java.sql.Time;
 
 public class CostPO {
+	public boolean Shenpi=false;
 	private double amount;//金额;
 	private String operator;//付款人
 	private String account;//付款账号

@@ -9,6 +9,7 @@ import po.orderPO.TypeOfPack;
 
 @SuppressWarnings("serial")
 public class OrderPO implements Serializable{
+	public boolean Shenpi=false;
 	private ArrayList<String>stateOfExpress=new ArrayList<String>();//物流状态
 	private String id;
 	private int numOfGoods;
